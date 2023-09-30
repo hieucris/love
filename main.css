@@ -177,15 +177,148 @@ p {
 
 .edit {
   position: absolute;
-  top: 0px;
-  left: 45.5%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 80px;
+  top: -20px;
+  left: 60%;
+  transform: translateX(-51%);
+  width: 400px;
+  height: 380px;
+}
+.edit > img {
+  width: 100%;
+  height: 100%;
 }
 .edits {
   position: absolute;
   top: 480px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.line1,
+.line2,
+.line3,
+.line4,
+.line5 {
+  position: absolute;
+  top: 630px;
+  width: 2px;
+  height: 70px;
+  background-color: aqua;
+  left: 742px;
+  transform: translateX(-79%);
+  transform-origin: top;
+  box-shadow: 0 0 10px aqua, 0 0 10px aqua, inset 0 0 10px aqua,
+    inset 0 0 10px aqua;
+  animation: slideDown 0.2s ease-in-out infinite alternate;
+}
+.line1 {
+  transform: rotate(-20deg);
+}
+.line2 {
+  transform: rotate(-10deg);
+}
+.line3 {
+  transform: rotate(0deg);
+}
+.line4 {
+  transform: rotate(10deg);
+}
+.line5 {
+  transform: rotate(20deg);
+}
+@keyframes slideDown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 70px;
+  }
+}
+.star {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 49%;
+  transform: translateX(-50%);
+  top: 80%;
+}
+
+.star1 {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  border: solid 3px #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px aqua, 0 0 10px aqua, inset 0 0 10px aqua,
+    inset 0 0 10px aqua;
+  animation: glow 0.01s infinite alternate;
+}
+.star2 {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  border: solid 3px #fff;
+  border-radius: 50%;
+  transform: rotate(53deg);
+  box-shadow: 0 0 10px aqua, 0 0 10px aqua, inset 0 0 10px aqua,
+    inset 0 0 10px aqua;
+  animation: glow 0.01s infinite alternate;
+}
+.star3 {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  border: solid 3px #fff;
+  border-radius: 50%;
+  transform: rotate(-53deg);
+  box-shadow: 0 0 10px aqua, 0 0 10px aqua, inset 0 0 10px aqua,
+    inset 0 0 10px aqua;
+  animation: glow 0.01s infinite alternate;
+}
+@keyframes glow {
+  0% {
+    opacity: 0.5; /* Bắt đầu với độ mờ */
+  }
+  100% {
+    opacity: 1; /* Kết thúc với độ sáng tỏ */
+  }
+}
+.line {
+  width: 5px;
+  height: 80px;
+  border: solid 3px aqua;
+  border-radius: 10px;
+  background-color: aqua;
+  position: absolute;
+  top: 488px;
+  left: 50%;
+  transform: translateX(-77%);
+  box-shadow: 0 0 10px white, 0 0 10px white, inset 0 0 10px white,
+    inset 0 0 10px white;
+  overflow: hidden; /* Ẩn phần bên ngoài của border để không hiển thị bóng đổ màu */
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  top: -100%; /* Bắt đầu ngoài khung .line bên trên */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    aqua,
+    transparent
+  ); /* Gradient màu theo chiều dọc */
+  animation: moveGradient 0.1s linear infinite; /* Animation cho gradient chạy */
+}
+
+@keyframes moveGradient {
+  0% {
+    top: -100%; /* Bắt đầu ngoài khung .line bên trên */
+  }
+  100% {
+    top: 100%; /* Kết thúc ngoài khung .line bên dưới */
+  }
 }

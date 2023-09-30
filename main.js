@@ -133,7 +133,8 @@ document.onmousewheel = function (e) {
 var canvas = document.getElementById("canvas");
 
 canvas.width = window.innerWidth - 262;
-canvas.height = window.innerHeight - 147;
+// canvas.height = window.innerHeight - 147;
+canvas.height = 600;
 
 // Initialize the GL context
 var gl = canvas.getContext("webgl");
